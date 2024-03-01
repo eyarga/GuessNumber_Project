@@ -2,6 +2,9 @@ from random import randint
 
 
 def choose_level():
+    """
+    Prompts the user to choose a difficulty level and returns the corresponding number of attempts.
+    """
     level = input(f"Choose a difficulty. Type 'easy' or 'hard': ").lower()
 
     while level != 'easy' or level != 'hard':
@@ -16,6 +19,9 @@ def choose_level():
 
 
 def check_answer(user_number, number_to_guess, lives):
+    """
+    Check if the user's guess matches the number to guess.
+    """
     if user_number == number_to_guess:
         print("You guessed the number!")
         return
@@ -30,6 +36,10 @@ def check_answer(user_number, number_to_guess, lives):
 
 
 def start_game():
+    """
+    This function initializes the game by printing a welcome message and generating a random number between 1 and 100.
+    It then prompts the user to choose a difficulty level and asks for their guesses until they either guess the correct number or run out of lives.
+    """
     print("Welcome to the Number Guessing Game!")
     print("I'm thinking of a number between 1 and 100.")
     number_to_guess = randint(1, 100)
